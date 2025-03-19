@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const cartRoutes = require("./routes/cartRoutes");
 const userRoutes = require("./routes/userRoutes");
+const reviewRoutes = require("./routes/reviewRoutes"); // Import review routes
 
 // Load environment variables
 dotenv.config();
@@ -33,6 +34,7 @@ mongoose
 // Routes
 app.use("/api/auth", userRoutes); // Use userRoutes for authentication
 app.use("/api/cart", cartRoutes); // Use cartRoutes for cart operations
+app.use("/api/reviews", reviewRoutes); // Use reviewRoutes for review operations
 
 // Error handling middleware
 app.use((err, req, res, next) => {
